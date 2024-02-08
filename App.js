@@ -20,11 +20,11 @@ export default function App() {
           <Text>Caixa de Letra</Text>
         </View>
         <View style={styles.viewBotoes}>
-          <Pressable onPress={() => console.log("oi")}>
-            <Text>Buscar Filmes</Text>
+          <Pressable style={styles.botao}>
+            <Text style={styles.textoBotao}>Buscar Filmes</Text>
           </Pressable>
-          <Pressable>
-            <Text>Favoritos</Text>
+          <Pressable style={styles.botao}>
+            <Text style={styles.textoBotao}>Favoritos</Text>
           </Pressable>
         </View>
         <View style={styles.viewRodape}>

@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "white",
+    backgroundColor: "#fff",
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
@@ -19,11 +19,19 @@ const styles = StyleSheet.create({
   },
   viewBotoes: {
     width: "90%",
-    backgroundColor: "orange",
     flex: 0.4,
     justifyContent: "space-around",
     flexDirection: "row",
     alignItems: "flex-start",
+  },
+  botao: {
+    borderStyle: "solid",
+    borderWidth: 2,
+    padding: 16,
+    backgroundColor: "#5451a6",
+  },
+  textoBotao: {
+    color: "#fff",
   },
   viewRodape: {
     width: "90%",
