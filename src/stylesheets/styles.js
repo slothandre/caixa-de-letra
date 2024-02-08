@@ -2,22 +2,23 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "yellow",
+    backgroundColor: "white",
     flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
   viewLogo: {
     width: "90%",
-    marginLeft: "auto",
-    marginRight: "auto",
-    backgroundColor: "green",
     flex: 0.5,
     justifyContent: "flex-end",
     alignItems: "center",
   },
+  logo: {
+    width: 128,
+    height: 128,
+  },
   viewBotoes: {
     width: "90%",
-    marginLeft: "auto",
-    marginRight: "auto",
     backgroundColor: "orange",
     flex: 0.4,
     justifyContent: "space-around",
@@ -26,8 +27,6 @@ const styles = StyleSheet.create({
   },
   viewRodape: {
     width: "90%",
-    marginLeft: "auto",
-    marginRight: "auto",
     backgroundColor: "red",
     flex: 0.1,
     flexDirection: "row",
