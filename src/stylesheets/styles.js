@@ -2,14 +2,14 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "white",
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },
   viewLogo: {
-    width: "90%",
-    flex: 0.5,
+    flex: 3,
+    width: "80%",
     justifyContent: "flex-end",
     alignItems: "center",
   },
@@ -17,12 +17,17 @@ const styles = StyleSheet.create({
     width: 128,
     height: 128,
   },
+  titulo: {
+    fontFamily: "Monoton-Regular",
+    fontSize: 28,
+    color: "#5a51a6",
+  },
   viewBotoes: {
-    width: "90%",
-    flex: 0.4,
-    justifyContent: "space-around",
+    flex: 2,
     flexDirection: "row",
     alignItems: "flex-start",
+    width: "80%",
+    justifyContent: "space-evenly",
   },
   botao: {
     borderStyle: "solid",
@@ -34,9 +39,9 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   viewRodape: {
-    width: "90%",
+    width: "80%",
     backgroundColor: "red",
-    flex: 0.1,
+    flex: 0.5,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
