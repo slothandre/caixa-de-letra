@@ -65,8 +65,18 @@ export default function App() {
         </View>
 
         <View style={styles.viewRodape}>
-          <Button title="Privacidade" />
-          <Button title="Sobre" />
+          <Pressable style={styles.botaoRodape}>
+            <Text style={styles.textoBotao}>
+              <Ionicons name="lock-closed" size={16} color="white" />
+              Privacidade
+            </Text>
+          </Pressable>
+          <Pressable style={styles.botaoRodape}>
+            <Text style={styles.textoBotao}>
+              <Ionicons name="information-circle" size={16} color="white" />
+              Sobre
+            </Text>
+          </Pressable>
         </View>
       </SafeAreaView>
     </>
