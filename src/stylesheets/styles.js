@@ -36,7 +36,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#5451a6",
   },
   textoBotao: {
+    fontFamily: "NotoSans",
     color: "#fff",
+    fontWeight: "bold",
+    fontSize: 16,
   },
   viewRodape: {
     width: "80%",
