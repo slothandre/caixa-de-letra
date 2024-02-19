@@ -6,44 +6,17 @@ import {
   StatusBar,
   Text,
   View,
+  StyleSheet,
 } from "react-native";
-import styles from "./src/stylesheets/styles";
 import logo from "./assets/images/logo.png";
 import { Ionicons } from "@expo/vector-icons";
-
-import { useFonts } from "expo-font";
-import * as SplashScreen from "expo-splash-screen";
-import { useCallback } from "react";
-
-/* Manter a tela splash visível enquanto não
-programarmos a ação de ocultar */
-SplashScreen.preventAutoHideAsync();
+import SafeContainer from "./src/components/SafeContainer";
 
 export default function App() {
-  const [fontsLoaded, fontError] = useFonts({
-    "Monoton-Regular": require("./assets/fonts/Monoton-Regular.ttf"),
-    NotoSans: require("./assets/fonts/NotoSans-VariableFont.ttf"),
-  });
-
-  /* Função atrelada ao hook useCallback.
-  Quando uma função está conectada ao useCallback, garantimos
-  que a referência dela é armazenada na memória somente uma vez. */
-  const aoAtualizarLayout = useCallback(async () => {
-    /* Se estiver tudo ok com o carregamento */
-    if (fontsLoaded || fontError) {
-      /* Escondemos a splashscreen */
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded, fontError]);
-
-  if (!fontsLoaded && !fontError) {
-    return null;
-  }
-
   return (
     <>
       <StatusBar barStyle="light-content" />
-      <SafeAreaView style={styles.container} onLayout={aoAtualizarLayout}>
+      <SafeContainer>
         <View style={styles.viewLogo}>
           <Image source={logo} style={styles.logo} />
           <Text style={styles.titulo}>Dá Hora Filmes</Text>
@@ -78,7 +51,55 @@ export default function App() {
             </Text>
           </Pressable>
         </View>
-      </SafeAreaView>
+      </SafeContainer>
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  viewLogo: {
+    flex: 3,
+    width: "80%",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  logo: {
+    width: 128,
+    height: 128,
+  },
+  titulo: {
+    fontFamily: "Monoton-Regular",
+    fontSize: 30,
+    color: "#5a51a6",
+  },
+  viewBotoes: {
+    flex: 2,
+    flexDirection: "row",
+    alignItems: "flex-start",
+    width: "80%",
+    justifyContent: "space-evenly",
+  },
+  botao: {
+    borderStyle: "solid",
+    borderWidth: 2,
+    padding: 16,
+    backgroundColor: "#5451a6",
+  },
+  textoBotao: {
+    fontFamily: "NotoSans",
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 16,
+  },
+  viewRodape: {
+    width: "100%",
+    backgroundColor: "#5451a6",
+    flex: 0.5,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  botaoRodape: {
+    padding: 16,
+  },
+});
