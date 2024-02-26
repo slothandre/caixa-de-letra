@@ -23,9 +23,11 @@ Dependências para navegação:
 
 `npx expo install react-native-screens react-native-safe-area-context`
 
-Mecanismo de navegação Stack
+Mecanismo de navegação Stack: `npm install @react-navigation/native-stack`
 
-`npm install @react-navigation/native-stack`
+### Configurações
+
+No `App.js` importamos o `NavigationContainer` e o `createNativeStackNavigator`, em seguida os configuramos para determinar as telas `Stack.Screen` e seus componentes correspondentes (`Home`, `Privacidade` e `Sobre`).
 
 ## Branch 03
 
