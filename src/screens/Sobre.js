@@ -1,6 +1,14 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import {
+  Image,
+  Linking,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import SafeContainer from "../components/SafeContainer";
+import logoAPI from "../../assets/images/logo-tmdb.png";
 
 export default function Sobre() {
   return (
@@ -13,6 +21,19 @@ export default function Sobre() {
           existentes na base de dados pública disponibilizada pelo site The
           Movie Database (TMDb).
         </Text>
+        <View style={styles.viewApi}>
+          <Pressable
+            onPress={() =>
+              Linking.openURL("https://www.themoviedb.org/?language=pt-BR")
+            }
+          >
+            <Image
+              resizeMode="contain"
+              source={logoAPI}
+              style={styles.imagemApi}
+            />
+          </Pressable>
+        </View>
         <Text style={styles.texto}>
           Ao localizar um filme, o usuário pode visualizar informações como
           título, data de lançamento, nota média de avaliação e uma breve
@@ -46,5 +67,12 @@ const styles = StyleSheet.create({
   nomeApp: {
     fontWeight: "bold",
     color: "#5351a6",
+  },
+  viewApi: {
+    alignItems: "center",
+    marginVertical: 8,
+  },
+  imagemApi: {
+    width: 160,
   },
 });
