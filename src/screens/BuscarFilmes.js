@@ -1,4 +1,17 @@
-export default function BuscarFilmes() {
+import {
+  Alert,
+  Button,
+  StyleSheet,
+  Text,
+  TextInput,
+  Vibration,
+  View,
+} from "react-native";
+import SafeContainer from "../components/SafeContainer";
+import { Ionicons } from "@expo/vector-icons";
+import { useState } from "react";
+
+export default function BuscarFilmes({ navigation }) {
   const [filme, setFilme] = useState("");
 
   /* Capturando e registrando em state
@@ -16,25 +29,27 @@ export default function BuscarFilmes() {
       return Alert.alert("Ops!", "Você deve digitar um filme!");
     }
 
-    Alert.alert("Você procurou por:", filme);
+    /* Redirecionamento para a tela de Resultados passando
+    o filme para ela */
+    navigation.navigate("Resultados", { filme });
   };
 
   return (
     <SafeContainer>
-      <View style={estilos.subContainer}>
-        <Text style={estilos.texto}>
+      <View style={styles.subContainer}>
+        <Text style={styles.texto}>
           Star Trek? O Poderoso Chefão? A trilogia Senhor dos Anéis?
         </Text>
-        <Text style={estilos.texto}>
+        <Text style={styles.texto}>
           Localize um filme que você viu ou gostaria de ver!
         </Text>
 
-        <View style={estilos.viewForm}>
+        <View style={styles.viewForm}>
           <Ionicons name="film" size={44} color="#5451a6" />
           <TextInput
             onChangeText={filmeDigitado}
             onSubmitEditing={buscarFilmes}
-            style={estilos.campo}
+            style={styles.campo}
             placeholder="Digite o filme"
             placeholderTextColor="#5451a6"
             maxLength={30}
@@ -48,7 +63,7 @@ export default function BuscarFilmes() {
   );
 }
 
-const estilos = StyleSheet.create({
+const styles = StyleSheet.create({
   subContainer: {
     flex: 1,
     padding: 16,
