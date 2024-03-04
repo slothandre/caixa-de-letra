@@ -9,7 +9,7 @@ Através dela que é possível acessar valores passados
 por meio de navegação entre telas. */
 export default function Resultados({ route }) {
   /* State para gerenciar os resultados da busca na API */
-  const [resultados, setResultados] = useEffect([]);
+  const [resultados, setResultados] = useState([]);
 
   // Capturando o parâmetro filme vindo de BuscarFilmes
   const { filme } = route.params;
@@ -25,11 +25,12 @@ export default function Resultados({ route }) {
             api_key: apiKey,
           },
         });
-        console.log(resposta.data);
+        console.log(resposta.data.results);
       } catch (error) {
         console.error("Deu ruim: " + error.message);
       }
     }
+    buscarFilmes();
   }, []);
 
   return (
