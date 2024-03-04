@@ -6,6 +6,7 @@ import Home from "./src/screens/Home";
 import Sobre from "./src/screens/Sobre";
 import Privacidade from "./src/screens/Privacidade";
 import BuscarFilmes from "./src/screens/BuscarFilmes";
+import Resultados from "./src/screens/Resultados";
 
 // Criação/inicialização do mecanismo Stack
 const Stack = createNativeStackNavigator();
@@ -37,6 +38,7 @@ export default function App() {
             component={Sobre}
             options={{ title: "Conheça nosso App" }}
           />
+          <Stack.Screen name="Resultados" component={Resultados} />
           <Stack.Screen name="Privacidade" component={Privacidade} />
         </Stack.Navigator>
       </NavigationContainer>
