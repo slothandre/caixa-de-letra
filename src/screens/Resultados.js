@@ -4,6 +4,7 @@ import { api, apiKey } from "../services/api-moviedb";
 import { useEffect, useState } from "react";
 import CardFilme from "../components/CardFilme";
 import Separador from "../components/Separador";
+import ListaVazia from "../components/ListaVazia";
 
 /* Prop route
 Prop especial e definida pelo React Navigation.
@@ -46,8 +47,8 @@ export default function Resultados({ route }) {
             renderItem={({ item }) => {
               return <CardFilme filme={item} />;
             }}
-            ListEmptyComponent={() => <Text>Nenhum filme localizado</Text>}
             ItemSeparatorComponent={Separador}
+            ListEmptyComponent={ListaVazia}
           />
         </View>
       </View>
