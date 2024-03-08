@@ -9,6 +9,7 @@ export default function CardFilme({ filme }) {
   return (
     <View style={styles.card}>
       <Image
+        resizeMode="cover"
         style={styles.image}
         source={{ uri: `https://image.tmdb.org/t/p/w500/${poster_path}` }}
       />
