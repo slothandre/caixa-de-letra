@@ -2,6 +2,7 @@ import { FlatList, StyleSheet, Text, View } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import { api, apiKey } from "../services/api-moviedb";
 import { useEffect, useState } from "react";
+import CardFilme from "../components/CardFilme";
 
 /* Prop route
 Prop especial e definida pelo React Navigation.
@@ -45,7 +46,7 @@ export default function Resultados({ route }) {
             keyExtractor={(item) => item.id}
             // Prop que irá renderizar cada item/filme em um componente
             renderItem={({ item }) => {
-              return <Text>{item.title}</Text>;
+              return <CardFilme filme={item} />;
             }}
           />
         </View>
@@ -61,6 +62,7 @@ const styles = StyleSheet.create({
   subContainer: {
     flex: 1,
     padding: 16,
+    width: "100%",
   },
   texto: {
     marginVertical: 8,
