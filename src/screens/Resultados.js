@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, Text, View } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import { api, apiKey } from "../services/api-moviedb";
 import { useEffect, useState } from "react";
@@ -25,7 +25,7 @@ export default function Resultados({ route }) {
             api_key: apiKey,
           },
         });
-        console.log(resposta.data.results);
+        setResultados(resposta.data.results);
       } catch (error) {
         console.error("Deu ruim: " + error.message);
       }
@@ -37,12 +37,27 @@ export default function Resultados({ route }) {
     <SafeContainer>
       <View style={styles.subContainer}>
         <Text style={styles.texto}>Você buscou por: {filme}</Text>
+        <View style={styles.viewFilmes}>
+          <FlatList
+            // Prop data apontando para o state contendo os dados para a Flat List
+            data={resultados}
+            // Extraindo a chave/key de cada registro/item/filme único
+            keyExtractor={(item) => item.id}
+            // Prop que irá renderizar cada item/filme em um componente
+            renderItem={({ item }) => {
+              return <Text>{item.title}</Text>;
+            }}
+          />
+        </View>
       </View>
     </SafeContainer>
   );
 }
 
 const styles = StyleSheet.create({
+  viewFilmes: {
+    marginVertical: 8,
+  },
   subContainer: {
     flex: 1,
     padding: 16,
