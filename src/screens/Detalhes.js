@@ -33,7 +33,10 @@ export default function Detalhes({ route }) {
               Avaliação: {vote_average}
             </Text>
             <Text style={[styles.texto, styles.lancamento]}>
-              Lançamento: {moment(release_date).format("DD/MM/yyyy")}
+              Lançamento:{" "}
+              {release_date
+                ? moment(release_date).format("DD/MM/yyyy")
+                : "Indisponível"}
             </Text>
             <Text style={[styles.texto, styles.descricao]}>
               {overview || "Sem descrição"}
