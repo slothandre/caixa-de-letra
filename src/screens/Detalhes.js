@@ -7,6 +7,7 @@ import {
 } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import imagemAlternativa from "../../assets/images/foto-alternativa.jpg";
+import moment from "moment";
 
 export default function Detalhes({ route }) {
   const { filme } = route.params;
@@ -28,9 +29,11 @@ export default function Detalhes({ route }) {
         </ImageBackground>
         <View style={styles.conteudo}>
           <ScrollView>
-            <Text style={[styles.texto, styles.avaliacao]}>{vote_average}</Text>
+            <Text style={[styles.texto, styles.avaliacao]}>
+              Nota: {vote_average}
+            </Text>
             <Text style={[styles.texto, styles.lancamento]}>
-              {release_date}
+              Data: {moment(release_date).format("DD/MM/yyyy")}
             </Text>
             <Text style={[styles.texto, styles.descricao]}>{overview}</Text>
           </ScrollView>
