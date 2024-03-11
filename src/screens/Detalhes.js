@@ -35,7 +35,9 @@ export default function Detalhes({ route }) {
             <Text style={[styles.texto, styles.lancamento]}>
               Lançamento: {moment(release_date).format("DD/MM/yyyy")}
             </Text>
-            <Text style={[styles.texto, styles.descricao]}>{overview}</Text>
+            <Text style={[styles.texto, styles.descricao]}>
+              {overview || "Sem descrição"}
+            </Text>
           </ScrollView>
         </View>
       </View>
