@@ -28,12 +28,12 @@ export default function Detalhes({ route }) {
           <Text style={styles.titulo}>{title}</Text>
         </ImageBackground>
         <View style={styles.conteudo}>
-          <ScrollView>
+          <ScrollView showsVerticalScrollIndicator={false}>
             <Text style={[styles.texto, styles.avaliacao]}>
-              Nota: {vote_average}
+              Avaliação: {vote_average}
             </Text>
             <Text style={[styles.texto, styles.lancamento]}>
-              Data: {moment(release_date).format("DD/MM/yyyy")}
+              Lançamento: {moment(release_date).format("DD/MM/yyyy")}
             </Text>
             <Text style={[styles.texto, styles.descricao]}>{overview}</Text>
           </ScrollView>
