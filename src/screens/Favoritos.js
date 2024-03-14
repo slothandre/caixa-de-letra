@@ -44,10 +44,10 @@ export default function Favoritos() {
   return (
     <SafeContainer>
       <View style={styles.subContainer}>
-        <View style={styles.viesFavoritos}>
+        <View style={styles.viewFavoritos}>
           <Text style={styles.texto}>Quantidade: {listaFavoritos.length}</Text>
 
-          <Pressable style={styles.botao}>
+          <Pressable style={styles.botaoExcluirFavoritos}>
             <Text style={styles.textoBotao}>
               <Ionicons name="trash-outline" size={16} /> Excluir favoritos
             </Text>
@@ -55,7 +55,16 @@ export default function Favoritos() {
         </View>
         <ScrollView showsVerticalScrollIndicator={false}>
           {listaFavoritos.map((filme) => {
-            return <Text key={filme.id}>{filme.title}</Text>;
+            return (
+              <View style={styles.item} key={filme.id}>
+                <Pressable style={styles.botaoFilme}>
+                  <Text style={styles.titulo}>{filme.title}</Text>
+                </Pressable>
+                <Pressable style={styles.botaoExcluir}>
+                  <Ionicons name="trash" size={16} />
+                </Pressable>
+              </View>
+            );
           })}
         </ScrollView>
       </View>
@@ -69,7 +78,22 @@ const styles = StyleSheet.create({
     padding: 16,
     width: "100%",
   },
+  viewFavoritos: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 8,
+  },
   texto: {
     marginVertical: 8,
+  },
+  botaoExcluirFavoritos: {
+    borderWidth: 1,
+    borderColor: "red",
+    padding: 8,
+    borderRadius: 4,
+  },
+  textoBotao: {
+    color: "red",
   },
 });
