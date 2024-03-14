@@ -10,6 +10,7 @@ import SafeContainer from "../components/SafeContainer";
 
 import { useEffect, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function Favoritos() {
   /* State para registrar os dados carregados do storage */
@@ -44,8 +45,19 @@ export default function Favoritos() {
     <SafeContainer>
       <View style={styles.subContainer}>
         <View style={styles.viesFavoritos}>
-          <Text style={styles.texto}>Favoritos...</Text>
+          <Text style={styles.texto}>Quantidade: {listaFavoritos.length}</Text>
+
+          <Pressable style={styles.botao}>
+            <Text style={styles.textoBotao}>
+              <Ionicons name="trash-outline" size={16} /> Excluir favoritos
+            </Text>
+          </Pressable>
         </View>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {listaFavoritos.map((filme) => {
+            return <Text key={filme.id}>{filme.title}</Text>;
+          })}
+        </ScrollView>
       </View>
     </SafeContainer>
   );
