@@ -23,7 +23,12 @@ export default function CardFilme({ filme }) {
         "@favoritoscaixadeletra"
       );
 
-      /* 2) Verificar/criar uma lista de filmes favoritos (dados) */
+      /* 2) Verificar/criar uma lista de filmes favoritos (dados)
+      Se filmesFavoritos existir (ou seja, tem dados no storage), pegamos
+      estes dados (strings) e convertemos em objeto (JSON.parse). Caso contrário,
+      listaDeFilmes será um array vazio. */
+      const listaDeFilmes = filmesFavoritos ? JSON.parse(filmesFavoritos) : [];
+
       /* 3) Verificar se já tem algum filme na lista */
       /* 4) Se o filme não estiver na lista, então vamos colocá-lo */
       /* 5) Usamos o AsyncStorage para gravar no armazenamento offline do dispositivo */
