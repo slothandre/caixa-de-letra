@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-dahora.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.sloth.andre.caixadeletra"
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "81da6bfa-d89c-4055-af5d-d3fe9dd115fd"
+      }
+    },
+    "owner": "sloth.andre"
   }
 }
