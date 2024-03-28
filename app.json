@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "caixa-de-letra",
+    "name": "Caixa de Letra",
     "slug": "caixa-de-letra",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/images/dahora.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/images/splash-dahora.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -19,12 +19,19 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/images/adaptive-dahora.png",
         "backgroundColor": "#ffffff"
+      },
+      "package": "com.sloth.andre.caixadeletra"
+    },
+    "plugins": [
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "81da6bfa-d89c-4055-af5d-d3fe9dd115fd"
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "owner": "sloth.andre"
   }
 }
